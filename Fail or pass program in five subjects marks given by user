@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main() {
+   int marks,total_obtained_marks_in_all_subjects=0;
+   float average;
+   for(int i=1;i<=5;i++)
+   {
+       do {
+       cout<<"Enter Your marks in subject "<<i<<" from [0-100]"<<endl;
+       cin>>marks;
+       } while(marks<0||marks>100);
+       
+       
+       if(marks>=45)
+       {
+           cout<<"You are pass in subject "<<i<<endl;
+           
+       }
+       else 
+       {
+         cout<<"You are not pass in subject "<<i<<endl;
+             
+       }
+       total_obtained_marks_in_all_subjects+=marks;
+   
+   }
+   average=(1.0*total_obtained_marks_in_all_subjects)/5;
+   cout<<"Average in all subjects = "<<average<<endl;
+   
+    return 0;
+}

@@ -1,0 +1,37 @@
+#include <iostream>
+using  namespace std;
+int main() {
+   int  size,search_num;
+     bool check=false;
+     int special_value=0;
+   cout<<"Please Enter the size of Array "<<endl;
+   cin>>size;
+   int arr[size];
+    cout<<"Please Enter an Array of Size "<<size<<endl;
+   for(int i=0;i<size;i++)
+   {
+       cin>>arr[i];
+    
+   }
+   cout<<"Enter the number to search and Replace with zero in the Array ";
+   cin>>search_num;
+   for(int i=0;i<size;i++)
+   {
+       if(arr[i]==search_num)
+       {
+          check=true; 
+          arr[i]=special_value;
+       }
+   }
+if(check==false)
+{
+  cout<<search_num <<" Not is Present in the  Array ";  
+}
+for(int i=0;i<size;i++)
+{
+{
+    cout<<arr[i]<<" ";
+}
+}
+    return 0;
+}

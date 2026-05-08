@@ -1,0 +1,111 @@
+
+#include <iostream>
+using namespace std;
+#include<cstdlib>
+#include<ctime>
+int main() {
+     const int row={5},col={5};
+    srand(time(0));
+   int arr[row][col];
+   int count=0,count1=0,count2=0;
+   int input=0,input1=0,input2=0;
+    for(int i=0;i<row;i++)
+    {
+        for(int j=0;j<col;j++)
+        {
+             arr[i][j]=rand() %10;
+        }
+        cout<<endl;
+    }
+      for(int i=0;i<row;i++)
+    {
+        for(int j=0;j<col;j++)
+        {
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    cout<<arr<<endl;
+    cout<<"Column wise"<<endl;
+    cout<<*(*(arr)+0)<<endl;
+    cout<<*(*(arr)+1)<<endl;
+    cout<<*(*(arr)+2)<<endl;
+    cout<<*(*(arr)+3)<<endl;
+    cout<<"Row wise"<<endl;
+    cout<<*(*(arr+0))<<endl;
+    cout<<*(*(arr+1))<<endl;
+    cout<<*(*(arr+2))<<endl;
+    cout<<*(*(arr+3))<<endl;
+    
+    cout<<"Enter the number to search in 2D Array "<<endl;
+    cin>>input;
+    for(int i=0;i<row;i++)
+    {
+        for(int j=0;j<col;j++)
+        {
+            if(arr[i][j]==input)
+            {
+                count++;
+            }
+        }
+    }
+    if(count>0)
+    {
+        cout<<input <<" is present in the 2D Array "<<endl;
+    }
+    else
+     {
+        cout<<count<<" is Not present in the 2D Array "<<endl;
+    }
+     
+    cout<<"Enter the number to search in each row of 2D Array "<<endl;
+    cin>>input1;
+     for(int i=0;i<row;i++)
+    {
+        count1=0;
+        for(int j=0;j<col;j++)
+        {
+            if(arr[i][j]==input1)
+            {
+        count1++;
+            }
+        }
+            if(count1>0)
+           {
+cout<<input1<<" is present in row number "<<i+1<<" in the 2D Array"<< endl;
+      
+           }   
+            else
+        {
+        cout<<input1<<" is Not present in row number "<<i+1<<" in the 2D Array"<< endl;
+        }
+        cout<<endl;
+      }
+      cout<<"Enter the number to search in each column of 2D Array "<<endl;
+    cin>>input2;
+        for(int i=0;i<col;i++)
+    {
+        count2=0;
+        for(int j=0;j<row;j++)
+        {
+            if(arr[j][i]==input2)
+            {
+        count2++;
+            }
+        }
+            if(count2>0)
+           {
+cout<<input2<<" is present in column number "<<i+1<<" in the 2D Array"<< endl;
+           }   
+            else
+        {
+cout<<input2<<" is Not present in column number "<<i+1<<" in the 2D Array"<< endl;
+        }
+        cout<<endl;
+      }
+ 
+    
+   
+
+    return 0;
+}

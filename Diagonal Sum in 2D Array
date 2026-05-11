@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+#include <climits>
+int main() {
+    
+    int row, col;
+    cout<<"Enter the Number of rows of   2D Array "<<endl;
+    cin>>row;
+     cout<<"Enter the Number of columns 2D Array "<<endl;
+     cin>>col;
+     cout<<"Enter the elements  in 2D Array "<<endl;
+  int arr[row][col];
+  for(int i=0;i<row;i++)
+  {
+      for(int j=0;j<col;j++)
+      {
+          cin>>arr[i][j];
+      }
+  }
+int sum=0;
+   for(int i=0;i<row;i++)
+  {
+      for(int j=0;j<col;j++)
+      {
+         if(arr[i]==arr[j])
+         {
+             sum+=arr[i][j];
+         }
+         
+      }
+  }
+  cout<<"First Diagonal Sum = "<<sum<<endl;
+  int sum1=0;
+  for(int i=0;i<row;i++)
+  {
+      for(int j=col-1;j>0;j--)
+      {
+         sum1+=arr[i][(col-1)-i];
+         
+      }
+  }
+ cout<<"Second Diagonal Sum = "<<sum1<<endl;
+  
+    
+    return 0;
+}

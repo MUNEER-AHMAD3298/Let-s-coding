@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main() {
+    //to print single unit char array
+    //single unit char array will stop when there is zero or NUll char
+    //size of array should be (size+1)
+    char arr[9]="Pakistan";
+       for(int i=0;i<8;i++)
+    {
+        cout<<arr[i];
+    }
+    return 0;
+}

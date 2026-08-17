@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+int main() {
+    //Pointers in character array
+   char name='a';
+    char *ptr=&name;
+    char arr[5]="1234";// at the last of char array there is null character so char array must be elements+1 size
+    char *ptr1=&arr[0];
+    //pointers in char array is different from pointers in integer array
+    // it will not print the address like integer array
+    cout<<name<<endl;
+    cout<<ptr<<endl;// it will print all the characters after it until null character
+    cout<<ptr1<<endl;
+
+    // to print address of char or char array we use void*    void pointer
+    // void* value ko points to karta he lekin he nhi batata k value kis type ki he
+    cout<<" Print address of char or char array"<<endl;
+    cout<< (void*)name<<endl;
+    cout<<(void*)ptr<<endl;
+    cout<<(void*)ptr1<<endl;
+
+    // to print all addresses of char array
+    cout<<"all addresses of char array are"<<endl;
+    for (int i=0;i<5;i++) {
+        cout<<(void*)ptr1+i<<endl;
+    }
+    //pointer points to anther character
+    cout<<"next"<<endl;
+    char input='c';
+    ptr=&input; // if we print ptr it will print all the value until null character
+    // to make null character to the next memory location of input we us use below method
+    char *b = &input;//b points to input memory location
+    b++; // now b points to input+1 memory location
+    *b = '\0';// now b has null char in it
+
+    cout<<ptr<<endl;// now it will  print only c because next memory location is nul character
+    cout<<"next"<<endl;
+
+    char *a = (char*)(void*)ptr;// it will also print only c
+    cout<<*a<<endl;
+    cout<<(void*)ptr<<endl;
+    return EXIT_SUCCESS;
+}

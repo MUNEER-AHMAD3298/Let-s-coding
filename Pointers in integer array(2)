@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+int main() {
+    //Pointers in integer array
+    int arr[5]={1,2,3,4,5};
+    int *ptr=&arr[0];
+
+    // Methods to print address of zero index element of array
+    cout<<"Address of zero index element of array"<<endl;
+    cout<<arr<<endl;
+    cout<<arr+0<<endl;
+    cout<<&arr[0]<<endl;
+    cout<<ptr<<endl;
+
+    //Methods to print value of zero index element of array
+    cout<<"Value of zero index element of array "<<endl;
+    cout<<*arr<<endl;
+    cout<<*(arr+0)<<endl;
+    cout<<arr[0]<<endl;
+    cout<<*ptr<<endl;
+
+    // to print addresses of all elements of array
+    for (int i=0;i<5;i++) {
+        cout<<arr+i<<endl; //cout<<&arr[i]<<" "<<endl; // cout<<&ptr[i]<<" "<<endl;
+    }
+    // to print values of all elements of array
+    for (int i=0;i<5;i++) {
+        cout<<ptr[i]<<endl;
+       // cout<<arr[i]<<endl;
+       // cout<<*(arr+i)<<endl;
+       // cout<<*(ptr+i)<<endl;
+    }
+
+    //Another method to print values of array using pointer
+    for (int i=0;i<5;i++) {
+        cout<<*ptr<<" ";
+        ptr++;
+    }
+
+    cout<<*ptr<<endl; // now here ptr points out of access memory
+    
+    ptr=&arr[0];
+    cout<<&*ptr<<endl; // here first * dereference the ptr and then & print the address of ptr value
+
+
+    return EXIT_SUCCESS;
+}

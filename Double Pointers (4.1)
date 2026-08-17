@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+void fun1(int *p) {
+    *p=*p+100;
+}
+void fun2(int **p) {
+    **p=**p+50;
+}
+void fun3(int ***p) {
+    ***p=***p+70;
+}
+int main() {
+    // Double Pointers and Multiple pointers
+    int n=10;
+    int *ptr1=&n;//single pointer
+    int **ptr2=&ptr1; //double pointer
+    int ***ptr3=&ptr2;//triple pointer
+    cout<<"Print addresses of all the pointers "<<endl;
+    cout<<"Address of n "<<&n<<endl;
+    cout<<"ptr1 holds the address of n that is "<<ptr1<<endl;
+    cout<<"Address of ptr1 is "<<&ptr1<<endl;
+    cout<<"ptr2 holds the address of ptr1 that is "<<ptr2<<endl;
+    cout<<"Address of ptr2 is "<<&ptr2<<endl;
+    cout<<"ptr3 holds the address of ptr2 that is "<<ptr3<<endl;
+    cout<<"Address of ptr3 is "<<&ptr3<<endl;
+
+cout<<"Now change the value of n by pointers "<<endl;
+
+    cout<<"change value of n by ptr1"<<endl;
+    *ptr1=*ptr1+5;
+    cout<<n<<endl;
+
+    cout<<"change value of n by ptr2"<<endl;
+    **ptr2=**ptr2+5;
+    cout<<n<<endl;
+
+    cout<<"change value of n by ptr3"<<endl;
+    ***ptr3=***ptr3+5;
+    cout<<n<<endl;
+    n=10;
+    cout<<"Now change the value of n by using functions "<<endl;
+    cout<<"Initially value of n is "<<n<<endl;
+    fun1(ptr1);
+    cout<<"value of n after first function is  "<<n<<endl;
+    fun2(ptr2);
+    cout<<"value of n after second function is "<<n<<endl;
+    fun3(ptr3);
+    cout<<"value of n after third function is "<<n<<endl;
+    return EXIT_SUCCESS;
+}

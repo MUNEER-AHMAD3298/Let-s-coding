@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+#include <climits>
+int main() {
+    //Pointers Basic
+    int a=20;
+    float b=2.3;
+    // print addresses of variables
+    cout<<&a<<endl;  // here & is reference or address operator
+    cout<<&b<<endl;
+
+    // to print address and value of variable
+    int *ptr=&a;
+    float *ptr1=&b;
+    cout<<ptr<<endl; //to show the address of variable
+    cout<<*ptr<<endl; // to show the value of variable
+    // above * is the dereference operator to show the value of variable
+
+    cout<<ptr1<<endl;
+    cout<<*ptr1<<endl;
+
+    // now change the value of above variable
+    a=30;
+    b=5.3;
+    cout<<ptr<<endl;
+    cout<<*ptr<<endl;
+
+    cout<<ptr1<<endl;
+    cout<<*ptr1<<endl;
+
+    // now to print the size of pointers
+    cout<<sizeof(ptr)<<endl;
+    cout<<sizeof(ptr1)<<endl;
+
+// now pointers will points to another variable
+    int c=5;
+    float d=4.3;
+    ptr=&c;
+    ptr1=&d;
+
+    cout<<ptr<<endl;
+    cout<<*ptr<<endl;
+
+    cout<<ptr1<<endl;
+    cout<<*ptr1<<endl;
+
+    return EXIT_SUCCESS;
+}

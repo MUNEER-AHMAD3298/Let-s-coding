@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+int main() {
+    // Dynamic Memory
+    // first concept of Stack and heap
+    //static and dynamic memory me difference
+    //the memory in the stack is automatically deleted after the execution of the program
+    // but we have to delete dynamic memory in heap
+    // the keyword new is used to create dynamic memory
+    // the keyword delete is used to delete dynamic memory
+    // the address of dynamic  memory are stored in stack
+
+    // creation of dynamic memory
+    //for variable
+    int *ptr1=new int;
+    float *ptr2=new float;
+    *ptr1=5;
+    *ptr2=3.5;
+    cout<<ptr1<<endl;
+    cout<<ptr2<<endl;
+
+    //for array
+    int n;
+    cout<<"Enter the size of the array "<<endl;
+    cin>>n;
+    int *p=new int [n];
+    cout<<"Enter the elements of the array "<<endl;
+    for (int i=0;i<n;i++)
+        cin>>p[i];
+    // to print values of array
+    for (int i=0;i<n;i++)
+        cout<<p[i]<<" ";
+    cout<<endl;
+
+// to delete the dynamic memory
+    delete ptr1;
+    delete ptr2;
+    delete [] p;
+    // the above keyword delete only our values that we store in them
+    //after this it will show any random values
+    cout<<*ptr1<<endl; // it will show any random value
+
+
+
+
+    return EXIT_SUCCESS;
+}

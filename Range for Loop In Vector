@@ -1,0 +1,28 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+int main() {
+    //Range for Loop In Vector
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    // to take input in vector
+    for (auto &elements :v)//& operator is used it will store elements to its corresponding  index in vector
+        cin>>elements;
+
+    // To print output
+    for (auto elements :v)
+        cout<<elements<<" ";
+    cout<<endl;
+
+    // to print addresses
+    for (auto elements :v)
+        cout<<&elements<<" ";
+    cout<<endl;
+    for (auto elements :v)
+        cout<<v[elements]<<" ";// it will show error here because we are accessing out of bound memory
+    //above loop  will show elements from 1 index and at last index it will  any random value because it starts from 1
+    return 0;
+}

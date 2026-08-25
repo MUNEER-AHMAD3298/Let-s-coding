@@ -1,0 +1,26 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    //Range for Loop In Array
+    int n;
+    cin>>n;
+    int arr[n];
+    // to take Input
+    for (auto &elements:arr)//& operator is used it will store elements to its corresponding  index in array
+        cin>>elements;
+    // to show output
+    for (auto elements:arr)
+        cout<<elements<<" ";
+cout<<endl;
+    for (auto elements:arr)
+        cout<<arr[elements]<<" ";
+    //above loop  will show elements from 1 index and at last index it will  any random value because it starts from 1
+cout<<endl;
+    // to print Addresses
+    for (auto elements:arr)
+        cout<<&arr[elements]<<" ";
+
+    return 0;
+}

@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    //Range for Loop In String
+    string s;
+    // to take input in String
+    cin>>s;
+    // To print output
+    for (auto elements :s)
+        cout<<elements;
+    cout<<endl;
+    // it will also print  output by giving a list
+    for (auto elements :{1,2,3,4,5})
+        cout<<elements;
+    cout<<endl;
+
+    // to print addresses
+    for (auto &elements :s)
+        cout<<(void*)&elements<<" ";
+    cout<<endl;
+
+    for (auto elements :s)
+        cout<<s[elements]<<" ";// it will show error here because we are accessing out of bound memory
+    //above loop  will show elements from 1 index and at last index it will  any random value because it starts from 1
+    cout<<endl;
+    return 0;
+}
+

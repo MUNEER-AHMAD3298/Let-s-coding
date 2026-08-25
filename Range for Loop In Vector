@@ -16,6 +16,10 @@ int main() {
     for (auto elements :v)
         cout<<elements<<" ";
     cout<<endl;
+    // it will also output by giving a list
+    for (auto elements :{1,2,3,4,5})
+        cout<<elements<<" ";
+    cout<<endl;
 
     // to print addresses
     for (auto elements :v)
